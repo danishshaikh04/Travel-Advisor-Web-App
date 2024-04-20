@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lightbox.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.3/swiper-bundle.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./lightbox-plus-jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.3/swiper-bundle.min.js"></script>
+    <script src="./script.js" defer></script>
+    
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="first-c">
+                <img src="./images/Travelicon.jpg" alt="">
+                <a href="./index.html">Travel
+                    <span>World</span>
+                </a>
+                <!-- <form id="form">
+                    <input type="text" id="search" placeholder="Search places here" class="search">
+                    <button id="searchbtn" autocomplete="off">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form> -->
+            </div>
+            <ul class="info">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <button id="account">
+                    <i class="fas fa-user-circle"></i>
+                </button>
+            </ul>
+        </div>
+    </header>
+
+    <main id="main">
+        <div class="header-ad-c">
+            <form id="form">
+                <input type="text" id="search" placeholder="Search places here" class="search" onclick="searchEngine()">
+            </form>
+            <button id="micbtn" class="micbtn" autocomplete="off">
+                <i class="fa-solid fa-microphone"></i>
+                <!-- <i class="fas fa-search"></i> -->
+            </button>
+            <div class="dropdown" id="dropdown">
+                <input class="ddinput" type="text" id="textbox1" placeholder="Rating" readonly>
+                <div class="option">
+                    <div id="All" onclick="show('All')">None</div>
+                    <div id="R1" onclick="show('Below 3.0')">Below 3.0</div>
+                    <div id="R2" onclick="show('3.0 - 4.0')">3.0 - 4.0</div>
+                    <div id="R3" onclick="show('Above 4.0')">Above 4.0</div>
+                </div>
+            </div>
+            <div class="dropdown" id="dropdown1">
+                <input class="ddinput" type="text" id="textbox2" placeholder="Price" readonly>
+                <div class="option">
+                    <div id="None" onclick="show1('None')">None</div>
+                    <div id="P1" onclick="show1('Below 2k')">Below 2k</div>
+                    <div id="P2" onclick="show1('2k - 10k')">2k - 10k</div>
+                    <div id="P3" onclick="show1('10k - 50k')">10k - 50k</div>
+                    <div id="P4" onclick="show1('Above 50k')">Above 50k</div>
+                </div>
+            </div>
+            <div class="dropdown" id="dropdown2">
+                <input class="ddinput" type="text" id="textbox3" placeholder="Days" readonly>
+                <div class="option">
+                    <div id="None" onclick="show2('None')">None</div>
+                    <div id="" onclick="show2('7 - d')">7 - d</div>
+                    <div id="" onclick="show2('14 - d')">14 - d</div>
+                    <div id="" onclick="show2('28 - d')">28 - d</div>
+                    <div id="" onclick="show2('Above 28 d')">Above 28 d</div>
+                </div>
+            </div>
+            <form>
+                <input type="text" id="members" placeholder="Members" class="members">
+            </form>
+        </div>
+        <div class="lists">
+            <button class="hotels" id="hotels"><i class="fa-solid fa-hotel"></i> - Hotels</button>
+            <button class="restaurants" id="restaurants"><i class="fa-solid fa-bell-concierge"></i> - Restaurants</button>
+            <button class="attractions" id="attractions"><i class="fa-solid fa-place-of-worship"></i> - Attractions</button>
+            <button class="allsaved" id="allsaved"><i class="fa-solid fa-bookmark"></i></button>
+        </div>
+
+        <div class="explore" id="explore">
+            <div class="main-img">
+                <img src="./images/h1.jpg">
+            </div>
+            <div class="main-quote">
+                <h4>“A journey of a thousand miles begins with a single step”</h4>
+            </div>
+        </div>
+
+        <div class="loading_c hidden" id="loading_c">
+        </div>
+        
+        <div class="HRA" id="HRA">
+        </div>
+        
+        <div class="pop hidden" id="pop">
+        </div>
+
+        <div class="popimg hidden" id="popimg">
+        </div>
+
+        <div class="popreview hidden" id="popreview">
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About us</a></li>
+                        <li><a href="contact.html">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
